@@ -1,44 +1,30 @@
 # jkjkjkjkj
 ## lklklklkl
 
-```markdown
+```console
 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 
 rootfstype=ext4 elevator=deadline fsck.repair=yes root wait
 ---
 setenv bootargs console=ttyS0,115200 ...
 ```
-```
+```python
 import serial
-
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
-
 print(ser.name)
-
 #ser.close()
-
 while 1 :
-
     x = ser.read()
-
     if x == '{':
-
         msg = ser.read(75)
-
         msg = x + msg
-
         msgbytes = bytearray(msg)
-
         #print msg
-
         msgbytes[8] = msgbytes[8] - 128
-
         msgbytes[33] = msgbytes[33] - 128
-
         msgbytes[34] = msgbytes[34] - 128
-
         print ("Modo: %d Amps: %d.%d" % (msgbytes[8],msgbytes[33],msgbytes[34]))
 ```
-```
+```C
 #include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
 #include <ArduinoOTA.h>
