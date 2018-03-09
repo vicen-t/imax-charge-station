@@ -1,6 +1,13 @@
 # jkjkjkjkj
 ## lklklklkl
 
+```markdown
+dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 
+rootfstype=ext4 elevator=deadline fsck.repair=yes root wait
+---
+setenv bootargs console=ttyS0,115200 ...
+```
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/vicen-t/imax-charge-station/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
