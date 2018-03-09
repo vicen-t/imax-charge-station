@@ -7,6 +7,38 @@ rootfstype=ext4 elevator=deadline fsck.repair=yes root wait
 ---
 setenv bootargs console=ttyS0,115200 ...
 ```
+```markdown
+import serial
+
+ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+
+print(ser.name)
+
+#ser.close()
+
+while 1 :
+
+    x = ser.read()
+
+    if x == '{':
+
+        msg = ser.read(75)
+
+        msg = x + msg
+
+        msgbytes = bytearray(msg)
+
+        #print msg
+
+        msgbytes[8] = msgbytes[8] - 128
+
+        msgbytes[33] = msgbytes[33] - 128
+
+        msgbytes[34] = msgbytes[34] - 128
+
+        print ("Modo: %d Amps: %d.%d" % (msgbytes[8],msgbytes[33],msgbytes[34]))
+```
+
 
 ## Welcome to GitHub Pages
 
