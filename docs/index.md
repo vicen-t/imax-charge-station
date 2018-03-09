@@ -7,7 +7,7 @@ rootfstype=ext4 elevator=deadline fsck.repair=yes root wait
 ---
 setenv bootargs console=ttyS0,115200 ...
 ```
-```markdown
+```
 import serial
 
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
