@@ -38,7 +38,7 @@ while 1 :
 
         print ("Modo: %d Amps: %d.%d" % (msgbytes[8],msgbytes[33],msgbytes[34]))
 ```
-`
+```
 #include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
 #include <ArduinoOTA.h>
@@ -65,7 +65,7 @@ const char *OTAPassword = "esp8266";
 #define LED_BLUE    13
 
 const char* mdnsName = "esp8266"; // Domain name for the mDNS responder
-`
+```
 
 ## Welcome to GitHub Pages
 
