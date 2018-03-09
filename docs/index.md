@@ -38,7 +38,34 @@ while 1 :
 
         print ("Modo: %d Amps: %d.%d" % (msgbytes[8],msgbytes[33],msgbytes[34]))
 ```
+`
+#include <ESP8266WiFi.h>
+#include <ESP8266WiFiMulti.h>
+#include <ArduinoOTA.h>
+#include <ESP8266WebServer.h>
+#include <ESP8266mDNS.h>
+#include <FS.h>
+#include <WebSocketsServer.h>
 
+ESP8266WiFiMulti wifiMulti;       // Create an instance of the ESP8266WiFiMulti class, called 'wifiMulti'
+
+ESP8266WebServer server = ESP8266WebServer(80);       // create a web server on port 80
+WebSocketsServer webSocket = WebSocketsServer(81);    // create a websocket server on port 81
+
+File fsUploadFile;                                    // a File variable to temporarily store the received file
+
+const char *ssid = "ESP8266 Access Point"; // The name of the Wi-Fi network that will be created
+const char *password = "thereisnospoon";   // The password required to connect to it, leave blank for an open network
+
+const char *OTAName = "ESP8266";           // A name and a password for the OTA service
+const char *OTAPassword = "esp8266";
+
+#define LED_RED     15            // specify the pins with an RGB LED connected
+#define LED_GREEN   12
+#define LED_BLUE    13
+
+const char* mdnsName = "esp8266"; // Domain name for the mDNS responder
+`
 
 ## Welcome to GitHub Pages
 
