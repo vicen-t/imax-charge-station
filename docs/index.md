@@ -1,6 +1,6 @@
 # jkjkjkjkj
 ## lklklklkl
-![alt text](img/Capture.JPG) "Descripción"
+![alt text](img/Capture.JPG "Descripción")
 
 ```
 dwc_otg.lpm_enable=0 **console=serial0**,115200 console=tty1 root=/dev/mmcblk0p2 
